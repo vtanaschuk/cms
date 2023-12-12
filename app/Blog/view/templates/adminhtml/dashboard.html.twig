@@ -1,0 +1,11 @@
+{% include 'html/header.html.twig' %}
+dashboard:
+<h1>{{ message }}</h1>
+<a href="/admin/post/add">Create Post</a>
+<a href="/admin/category/add">Create Category</a>
+
+{% include 'adminhtml/listing/post.html.twig' %}
+
+{% include 'adminhtml/listing/category.html.twig' %}
+
+{% include 'adminhtml/listing/page.html.twig' %}

@@ -1,0 +1,29 @@
+<form action="/admin/post/save" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="entity_id" value="{{ post.entity_id }}">
+    <input type="text" name="title" placeholder="title" value="{{ post.title }}">
+    <input type="text" name="text" placeholder="text" value="{{ post.text }}">
+{#    <input type="file" name="picture" multiple accept="image/*">#}
+    <input class="input file" type="file" name="picture" multiple accept="image/*">
+
+    <select name="category">
+
+        {% for key, value in categoryData %}
+            <option value="{{ key }}" data-option-{{ key }}>{{ value }}</option>
+        {% endfor %}
+
+{#        {% for value in categoryData %}#}
+{#            <option value="{{ value.id }}" >{{ value.name }}</option>#}
+{#        {% endfor %}#}
+
+    </select>
+    <img src="data:image/png;base64, {{ img }}"/>
+
+
+
+    <button type="submit">Save!</button>
+</form>
+
+<script>
+    let option = document.querySelector('[data-option-{{ post.category }}]');
+        option.setAttribute('selected','selected');
+</script>

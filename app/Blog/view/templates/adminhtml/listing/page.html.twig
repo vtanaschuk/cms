@@ -1,0 +1,28 @@
+<div>
+    <h3>Pages: </h3>
+
+
+    {% for item in page%}
+
+        </div>
+            <div>
+                <p>
+                    ID: {{ item.id }}
+                </p>
+                <p>
+                    Title: {{ item.title }}
+                </p>
+                <p>
+                    Content: {{ item.content }}
+                </p>
+                <a href="/admin/page/edit/id/{{ item.id }}">Edit</a>
+                <a href="/admin/page/delete/id/{{ item.id }}">Delete</a>
+                <a href="/admin/page/view/id/{{ item.id }}">View</a>
+
+
+                <hr>
+    {% endfor %}
+
+</div>
+<script>
+</script>

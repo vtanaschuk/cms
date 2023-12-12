@@ -1,0 +1,12 @@
+{% include 'html/header.html.twig' %}
+<form action="/admin-login" method="POST">
+    <input name="login" placeholder="Username" type="text">
+    <input name="password" placeholder="Password" type="password">
+    <button type="submit">Login</button>
+</form>
+
+<style>
+    .user-links {
+        display: none;
+    }
+</style>

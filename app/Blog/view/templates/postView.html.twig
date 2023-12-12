@@ -1,0 +1,45 @@
+<div class="content">
+
+    <div class="post">
+        {% for item in page%}
+            <div>
+                <a href="/page/id/{{ item.id }}">{{ item.title }}</a>
+            </div>
+        {% endfor %}
+
+        <div>
+            <h3>Post: </h3>
+            {% for item in postData %}
+                <div class="post_item">
+                    <div class="img_block">
+                        <img src="data:image/png;base64, {{ item.picture }}"/>
+                    </div>
+                    <div class="">
+                        <p>
+                            ID: {{ item.entity_id }}
+                        </p>
+                        <p>
+                            Title: {{ item.title }}
+                        </p>
+                        <p>
+                            Category:
+                            <a href="?category={{ item.category_id }}">{{ item.category }}</a>
+                        </p>
+                    </div>
+
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+    <div class="category">
+        <h1>Category</h1>
+        {% for item in category%}
+            <div>
+                <a href="?category={{ item.id }}">{{ item.name }}</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+

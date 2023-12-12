@@ -1,0 +1,14 @@
+<div>
+    <h3>Category: </h3>
+
+        {% for item in category%}
+            <div>
+            ID: {{ item.id }} {{ item.name }}
+                <a href="/admin/category/edit/id/{{ item.id }}">Edit</a>
+                <a href="/admin/category/delete/id/{{ item.id }}">Delete</a>
+
+            </div>
+        {% endfor %}
+</div>
+
+

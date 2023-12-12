@@ -1,0 +1,16 @@
+{
+    "name": "app",
+    "description": "learning app",
+    "autoload" : {
+        "psr-4": {"Blog\\": "app/Blog"},
+        "classmap": [
+          "app/Blog"
+        ]
+    },
+    "require": {
+        "klein/klein": "^2.1",
+        "catfan/medoo": "^1.7",
+        "twig/twig": "^3.3",
+        "mnapoli/php-di": "3.5"
+    }
+}

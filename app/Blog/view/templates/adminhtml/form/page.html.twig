@@ -1,0 +1,41 @@
+<form action="/admin/page/save" method="post">
+    <input type="hidden" name="id" value="{{ page.id }}">
+    <input name="title" placeholder="page name" data-attr-name value="{{ page.title }}">
+    <textarea name="content" placeholder="page name" data-attr-name value="">{{ page.content }}</textarea>
+    <input type="radio" id="status_on"
+           name="status" value="1" data-attr-status>
+    <label for="status_on">Enable</label>
+
+    <input type="radio" id="status_of"
+           name="status" value="0" data-attr-status>
+    <label for="status_of">Disable</label>
+    <button  data-attr-button type="submit">Save!</button>
+
+</form>
+
+<script>
+    let name    = document.querySelector('[data-attr-name]'),
+        button  = document.querySelector('[data-attr-button]'),
+        val1    = name.value,
+        radio = document.querySelectorAll('[data-attr-status]');
+    if (val1.length < 5){
+        button.setAttribute("disabled", "disabled");
+    }
+
+    name.addEventListener('keyup', function(event) {
+        val = name.value;
+
+        if (val.length < 5){
+            button.setAttribute("disabled", "disabled");
+        }else{
+            button.removeAttribute("disabled")
+        }
+    });
+    console.log(radio);
+    if ({{ page.status }} == 1 ){
+        document.getElementById('status_on').checked = "checked";
+    }else{
+        document.getElementById('status_of').checked = "checked";
+
+    }
+</script>

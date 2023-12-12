@@ -1,0 +1,20 @@
+{% include 'html/header.html.twig' %}
+
+<div>
+    <h3>Page: </h3>
+        <div>
+            <p>
+                ID: {{ page.id }}
+            </p>
+            <p>
+                Title: {{ page.title }}
+            </p>
+            <p>
+                Content: {{ page.content }}
+            </p>
+            <a href="/admin/page/edit/id/{{ item.entity_id }}">Edit</a>
+            <a href="/admin/page/delete/id/{{ item.entity_id }}">Delete</a>
+            <hr>
+        </div>
+</div>
+

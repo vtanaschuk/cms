@@ -1,0 +1,27 @@
+<form action="/admin/category/save" method="post">
+    <input type="hidden" name="id" value="{{ category.id }}">
+    <input type="text" name="name" placeholder="category name" data-attr-name value="{{ category.name }}">
+
+    <button  data-attr-button type="submit">Save!</button>
+
+</form>
+
+<script>
+    let name    = document.querySelector('[data-attr-name]'),
+        button  = document.querySelector('[data-attr-button]'),
+        val1    = name.value;
+    if (val1.length < 5){
+        button.setAttribute("disabled", "disabled");
+    }
+
+    name.addEventListener('keyup', function(event) {
+        val = name.value;
+
+        if (val.length < 5){
+            button.setAttribute("disabled", "disabled");
+        }else{
+            button.removeAttribute("disabled")
+        }
+    });
+
+</script>

@@ -1,0 +1,25 @@
+<div>
+    <h3>Post: </h3>
+
+    {% for item in post %}
+            <div>
+                <p>
+                    ID: {{ item.entity_id }}
+                </p>
+                <p>
+                    Title: {{ item.title }}
+                </p>
+                <p>
+                    Category
+                    <a href="">{{ item.category }}</a>
+                </p>
+                <img src="data:image/png;base64, {{ item.picture }}"/>
+                <a href="/admin/post/edit/id/{{ item.entity_id }}">Edit</a>
+                <a href="/admin/post/delete/id/{{ item.entity_id }}">Delete</a>
+
+                <hr>
+            </div>
+        {% endfor %}
+</div>
+<script>
+</script>
